@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>The converted Sign language is: </h1> 
+    <!-- <img src="{{ image_path }}">!! -->
+
+    {% for letter in name %}
+        {% if letter == ' ' %}
+            <img src="{{ url_for('static', filename='Blank.jpeg') }}">
+        {% else %}
+            <img src="{{ url_for('static', filename=letter + '.jpeg') }}">
+        {% endif %}
+    {% endfor %}
+
+
+{% endblock %}
